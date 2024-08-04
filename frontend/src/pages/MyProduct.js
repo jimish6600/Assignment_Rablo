@@ -12,7 +12,8 @@ const MyProduct = () => {
   const {currectLogin} = useContext(StoreContext);
   useEffect(() => {
     if(!currectLogin){
-      navigate("/auth")
+      navigate("/");
+      ret
     }
     const fetchProducts = async () => {
       try {
@@ -140,12 +141,12 @@ const MyProduct = () => {
                       type="number"
                       name="rating"
                       step="0.1"
-                      value={parseFloat(updatedProduct.rating).toFixed(1) ||  parseFloat(product.rating)}
+                      value={updatedProduct.rating ? parseFloat(updatedProduct.rating).toFixed(1) : parseFloat(product.rating?.$numberDecimal).toFixed(1)}
                       onChange={handleInputChange}
                       className="w-full p-2 border border-gray-300 rounded"
                     />
                   ) : (
-                    `${parseFloat(product.rating?.$numberDecimal).toFixed(1)||  product.rating || 'N/A'}`
+                    `${product.rating?.$numberDecimal ? parseFloat(product.rating.$numberDecimal).toFixed(1) : product.rating || 'N/A'}`
                   )}
                 </td>
                 <td className="py-2 px-4 border-b">

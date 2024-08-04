@@ -60,7 +60,7 @@ const UploadProduct = () => {
 
   useEffect(()=>{
     if(!currectLogin){
-      navigate("/auth")
+      navigate("/")
     }
   },[])
   return (
