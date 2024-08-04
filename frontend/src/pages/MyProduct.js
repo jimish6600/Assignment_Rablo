@@ -13,7 +13,6 @@ const MyProduct = () => {
   useEffect(() => {
     if(!currectLogin){
       navigate("/");
-      ret
     }
     const fetchProducts = async () => {
       try {
