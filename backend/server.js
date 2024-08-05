@@ -20,9 +20,9 @@ app.use("/api/products", productRouter)
 
 const PORT = process.env.PORT || 8080 
 
-connectDB().then(()=>{
-    app.listen(PORT,()=>{
-        console.log("DB connect")
-        console.log(`Server is runing${PORT}`)
-    })
+connectDB()
+
+app.listen(PORT,()=>{
+    console.log("DB connect")
+    console.log(`Server is runing${PORT}`)
 })
